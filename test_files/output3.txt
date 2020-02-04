@@ -2,9 +2,9 @@ Vector test program
 Type the default size of array and the size of incrementation.
 Size:
 Incrementation:
-myMalloc: prideluji 32 bajtu, celkove prideleno 32 bajtu
-myMalloc: prideluji 80 bajtu, celkove prideleno 112 bajtu
-myRealloc: prideluji 800 bajtu, celkove prideleno 912 bajtu
+myMalloc: allocating 32 bytes, memory allocated 32 bytes
+myMalloc: allocating 80 bytes, memory allocated 112 bytes
+myRealloc: allocating 800 bytes, memory allocated 912 bytes
 Press:
 1 to show the length of vector
 2 to add a new item
@@ -206,6 +206,6 @@ Press:
 0 to print one item
 anything else to finish.
 Freeing all allocated memory.
-myFree: uvolnuji 880 bajtu, celkove prideleno 32 bajtu
-myFree: uvolnuji 32 bajtu, celkove prideleno 0 bajtu
+myFree: releasing 880 bytes, memory allocated 32 bytes
+myFree: releasing 32 bytes, memory allocated 0 bytes
 All allocated memory was freed.

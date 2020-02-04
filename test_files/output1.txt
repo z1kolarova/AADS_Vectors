@@ -2,10 +2,10 @@ Vector test program
 Type the default size of array and the size of incrementation.
 Size:
 Incrementation:
-myMalloc: prideluji 32 bajtu, celkove prideleno 32 bajtu
-myMalloc: prideluji 40 bajtu, celkove prideleno 72 bajtu
-myRealloc: prideluji 80 bajtu, celkove prideleno 152 bajtu
-myRealloc: prideluji 80 bajtu, celkove prideleno 232 bajtu
+myMalloc: allocating 32 bytes, memory allocated 32 bytes
+myMalloc: allocating 40 bytes, memory allocated 72 bytes
+myRealloc: allocating 80 bytes, memory allocated 152 bytes
+myRealloc: allocating 80 bytes, memory allocated 232 bytes
 Press:
 1 to show the length of vector
 2 to add a new item
@@ -151,7 +151,7 @@ Press:
 9 to create a copy of a vector
 0 to print one item
 anything else to finish.
-myFree: uvolnuji 200 bajtu, celkove prideleno 32 bajtu
+myFree: releasing 200 bytes, memory allocated 32 bytes
 Press:
 1 to show the length of vector
 2 to add a new item
@@ -178,7 +178,7 @@ Press:
 0 to print one item
 anything else to finish.
 Choose the value of an item:
-myRealloc: prideluji 80 bajtu, celkove prideleno 112 bajtu
+myRealloc: allocating 80 bytes, memory allocated 112 bytes
 Press:
 1 to show the length of vector
 2 to add a new item
@@ -204,12 +204,12 @@ Press:
 9 to create a copy of a vector
 0 to print one item
 anything else to finish.
-myMalloc: prideluji 32 bajtu, celkove prideleno 144 bajtu
-myMalloc: prideluji 80 bajtu, celkove prideleno 224 bajtu
+myMalloc: allocating 32 bytes, memory allocated 144 bytes
+myMalloc: allocating 80 bytes, memory allocated 224 bytes
 copy[0]: 8
 Removing the vector "copy"
-myFree: uvolnuji 80 bajtu, celkove prideleno 144 bajtu
-myFree: uvolnuji 32 bajtu, celkove prideleno 112 bajtu
+myFree: releasing 80 bytes, memory allocated 144 bytes
+myFree: releasing 32 bytes, memory allocated 112 bytes
 Press:
 1 to show the length of vector
 2 to add a new item
@@ -223,6 +223,6 @@ Press:
 0 to print one item
 anything else to finish.
 Freeing all allocated memory.
-myFree: uvolnuji 80 bajtu, celkove prideleno 32 bajtu
-myFree: uvolnuji 32 bajtu, celkove prideleno 0 bajtu
+myFree: releasing 80 bytes, memory allocated 32 bytes
+myFree: releasing 32 bytes, memory allocated 0 bytes
 All allocated memory was freed.

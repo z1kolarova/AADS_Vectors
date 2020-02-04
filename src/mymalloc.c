@@ -133,7 +133,7 @@ void * myMalloc( long size )
     if( tmpUk != NULL ) {
         insertHTableNode( tmpUk, size );
         alokaceCelkem += size;
-        printf( "myMalloc: prideluji %ld bajtu, celkove prideleno %ld bajtu\n", size, alokaceCelkem );
+        printf( "myMalloc: allocating %ld bytes, memory allocated %ld bytes\n", size, alokaceCelkem );
     }
 
 #endif
@@ -148,7 +148,7 @@ void myFree( void * memblock )
     if( memblock != NULL ) {
         size = deleteNode( memblock );
         alokaceCelkem -= size;
-        printf( "myFree: uvolnuji %ld bajtu, celkove prideleno %ld bajtu\n", size, alokaceCelkem );
+        printf( "myFree: releasing %ld bytes, memory allocated %ld bytes\n", size, alokaceCelkem );
     }
 
 #endif
@@ -167,21 +167,21 @@ void *myRealloc( void *ptr, size_t newSize )
         alokaceCelkem += newSize - *size;
 
         if( *size > newSize ) {
-            printf( "myRealloc: uvolnuji %ld bajtu, celkove prideleno %ld bajtu\n", (long int)(*size - newSize), (long int)alokaceCelkem );
+            printf( "myRealloc: releasing %ld bytes, memory allocated %ld bytes\n", (long int)(*size - newSize), (long int)alokaceCelkem );
         } else {
-            printf( "myRealloc: prideluji %ld bajtu, celkove prideleno %ld bajtu\n", (long int)(newSize - *size), (long int)alokaceCelkem );
+            printf( "myRealloc: allocating %ld bytes, memory allocated %ld bytes\n", (long int)(newSize - *size), (long int)alokaceCelkem );
         }
 
         *size = newSize;
     } else if( ptr == NULL && tPtr != NULL ) { // kdyz je realloc volan s null na vstupu
         insertHTableNode( tPtr, newSize );
         alokaceCelkem += newSize;
-        printf( "myRealloc: prideluji %ld bajtu, celkove prideleno %ld bajtu\n", (long int)newSize, (long int)alokaceCelkem );
+        printf( "myRealloc: allocating %ld bytes, memory allocated %ld bytes\n", (long int)newSize, (long int)alokaceCelkem );
     } else if( tPtr != NULL ) { // uspesne alokovano nove misto
         long size = newSize - deleteNode( ptr );
         insertHTableNode( tPtr, newSize );
         alokaceCelkem += size;
-        printf( "myRealloc: prideluji %ld bajtu, celkove prideleno %ld bajtu\n", (long int)size, (long int)alokaceCelkem );
+        printf( "myRealloc: allocating %ld bytes, memory allocated %ld bytes\n", (long int)size, (long int)alokaceCelkem );
     }
 
 #endif

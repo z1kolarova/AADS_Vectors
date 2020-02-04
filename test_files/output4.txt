@@ -2,6 +2,6 @@ Vector test program
 Type the default size of array and the size of incrementation.
 Size:
 Incrementation:
-myMalloc: prideluji 32 bajtu, celkove prideleno 32 bajtu
-myFree: uvolnuji 32 bajtu, celkove prideleno 0 bajtu
+myMalloc: allocating 32 bytes, memory allocated 32 bytes
+myFree: releasing 32 bytes, memory allocated 0 bytes
 Memory for vector was not allocated successfully.
