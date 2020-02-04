@@ -1,0 +1,7 @@
+Vector test program
+Type the default size of array and the size of incrementation.
+Size:
+Incrementation:
+myMalloc: prideluji 32 bajtu, celkove prideleno 32 bajtu
+myFree: uvolnuji 32 bajtu, celkove prideleno 0 bajtu
+Memory for vector was not allocated successfully.
