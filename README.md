@@ -12,5 +12,3 @@ Metody k implementaci:
 - zjištění jestli vektor obsahuje hodnotu
 - zjištění pozice prvku
 - vyčištění vektoru
-
-Referenční vstupy a výstupy jsou v adresáři [test_files](test_files). Z výstupů si všimněte, že před spuštěním programu je vektor naplněn hodnotami 0-100 po kroku 5. Toto chování také implementujte.
