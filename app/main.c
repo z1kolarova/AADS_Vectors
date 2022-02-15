@@ -139,7 +139,7 @@ int main(void)
         GET_VECTOR_VALUE_AND_TEST(n);
         size_t index;
         printf("Choose the initial index for searching:\n");
-        GET_VALUE_AND_TEST("zu", index);
+        GET_VALUE_AND_TEST("%zu", index);
         size_t position = Vector_IndexOf(vector, n, index);
         if (position != SIZE_MAX) {
           printf("Position of an item: %zu\n", position);
