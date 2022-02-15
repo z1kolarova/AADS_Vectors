@@ -42,7 +42,7 @@ typedef struct {
   Vector_DataType_t *next;
 
   /*! Number of cells allocated during expanding. */
-  uint32_t alloc_step;
+  size_t alloc_step;
 } Vector_t;
 
 /* Exported macros -------------------------------------------------------------------------------*/
