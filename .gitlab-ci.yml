@@ -4,30 +4,29 @@ stages:
     - test
 
 variables:
-  PROJECT_NAME: "Vector"
+  PROJECT_NAME: "app"
   BINARY_PATH: "bin"
+  TESTS_NAME: "tests"
   TEST_FILES_PATH: "/home/gitlab-runner/ADS/Vector"
-
-before_script:
-  - /opt/QtCreator/bin/qbs-setup-toolchains --detect
 
 linux:
   tags:
     - seminars
   stage: build
-  
+
   script: 
-    - /opt/QtCreator/bin/qbs -f $PROJECT_NAME.qbs profile:gcc qbs.installRoot:. config:linux qbs.defaultBuildVariant:debug
+    - cmake CMakeLists.txt
+    - make
 
   cache:
     paths:
       - $BINARY_PATH/$PROJECT_NAME
-      - $BINARY_PATH/tests
-    
+      - $BINARY_PATH/$TESTS_NAME
+
   artifacts:
     paths:
       - $BINARY_PATH/$PROJECT_NAME
-      - $BINARY_PATH/tests
+      - $BINARY_PATH/$TESTS_NAME
     when: always
 
 win:
@@ -38,143 +37,82 @@ win:
   allow_failure: true
 
   script:
-    - /opt/QtCreator/bin/qbs -f $PROJECT_NAME.qbs profile:i686-w64-mingw32.static qbs.installRoot:. config:win qbs.defaultBuildVariant:debug
+    - i686-w64-mingw32.static-cmake CMakeLists.txt
+    - make
 
   artifacts:
     paths:
       - $BINARY_PATH/$PROJECT_NAME.exe
-      - $BINARY_PATH/tests.exe
+      - $BINARY_PATH/$TESTS_NAME.exe
 
 unitTesting:
   tags:
     - seminars
+
   stage: unitTests
-  allow_failure: true
-  
+
+  variables:
+    UT_NAME: "unitTestOutput.txt"
+
   script:
-    - bin/tests > unitTestOutput.txt
-    - if [[ `cat unitTestOutput.txt` =~ ", 0 failures" ]];then exit 0;else exit 1;fi
-    
+    - cd $BINARY_PATH
+    - ./$TESTS_NAME | tee $UT_NAME
+    - (! grep -q "FAILED TESTS" $UT_NAME)
+
   artifacts:
     paths:
-      - unitTestOutput.txt
-    when: always
-      
-test1:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput1.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input1.txt > output1.txt
-    - diff output1.txt $TEST_FILES_PATH/output1.txt > diffOutput1.diff
-    - if [[ `cat valgrindOutput1.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output1.txt
-      - diffOutput1.diff
-      - valgrindOutput1.txt
-    when: always
-    
-test2:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput2.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input2.txt > output2.txt
-    - diff output2.txt $TEST_FILES_PATH/output2.txt > diffOutput2.diff
-    - if [[ `cat valgrindOutput2.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output2.txt
-      - diffOutput2.diff
-      - valgrindOutput2.txt
-    when: always
-    
-test3:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput3.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input3.txt > output3.txt
-    - diff output3.txt $TEST_FILES_PATH/output3.txt > diffOutput3.diff
-    - if [[ `cat valgrindOutput3.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output3.txt
-      - diffOutput3.diff
-      - valgrindOutput3.txt
-    when: always
-    
-test4:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput4.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input4.txt > output4.txt
-    - diff output4.txt $TEST_FILES_PATH/output4.txt > diffOutput4.diff
-    - if [[ `cat valgrindOutput4.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output4.txt
-      - diffOutput4.diff
-      - valgrindOutput4.txt
-    when: always
-    
-test5:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput5.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input5.txt > output5.txt
-    - diff output5.txt $TEST_FILES_PATH/output5.txt > diffOutput5.diff
-    - if [[ `cat valgrindOutput5.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output5.txt
-      - diffOutput5.diff
-      - valgrindOutput5.txt
-    when: always
-    
-test6:
-  tags:
-    - seminars
-  stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput6.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input6.txt > output6.txt
-    - diff output6.txt $TEST_FILES_PATH/output6.txt > diffOutput6.diff
-    - if [[ `cat valgrindOutput6.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
-  artifacts:
-    paths:
-      - output6.txt
-      - diffOutput6.diff
-      - valgrindOutput6.txt
+      - $BINARY_PATH/$UT_NAME
     when: always
 
-test7:
+integrationTest: &integrationTest
   tags:
     - seminars
+
   stage: test
-  
-  script: 
-    - valgrind --log-file=valgrindOutput7.txt $BINARY_PATH/$PROJECT_NAME < $TEST_FILES_PATH/input7.txt > output7.txt
-    - diff output7.txt $TEST_FILES_PATH/output7.txt > diffOutput7.diff
-    - if [[ `cat valgrindOutput7.txt` =~ "no leaks are possible" ]];then exit 0;else exit 1;fi
-    
+  variables:
+    SEQ_NUM: "1"
+
+  script:
+    - cd $BINARY_PATH
+    - valgrind --log-file=valgrindOutput.txt ./$PROJECT_NAME < $TEST_FILES_PATH/input$SEQ_NUM.txt | tee output.txt
+    - diff output.txt $TEST_FILES_PATH/output$SEQ_NUM.txt | tee diffOutput.diff
+    - grep -q "no leaks are possible" valgrindOutput.txt
+    - cmp output.txt $TEST_FILES_PATH/output$SEQ_NUM.txt
+
   artifacts:
     paths:
-      - output7.txt
-      - diffOutput7.diff
-      - valgrindOutput7.txt
+      - $BINARY_PATH/output.txt
+      - $BINARY_PATH/diffOutput.diff
+      - $BINARY_PATH/valgrindOutput.txt
     when: always
+
+integrationTest1:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "2"
+
+
+integrationTest2:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "3"
+
+integrationTest3:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "4"
+
+integrationTest4:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "5"
+
+integrationTest5:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "6"
+
+integrationTest6:
+  <<: *integrationTest
+  variables:
+    SEQ_NUM: "7"
