@@ -18,6 +18,6 @@ enable_testing()
 add_executable(${GTEST_TESTS} tests.cpp)
 target_link_libraries(${GTEST_TESTS} PRIVATE gtest gmock gtest_main vector stdc++)
 
-gtest_discover_tests(${GTEST_TESTS})
+#gtest_discover_tests(${GTEST_TESTS})
 
 file(COPY ${CMAKE_SOURCE_DIR}/test_files DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/)

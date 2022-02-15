@@ -68,7 +68,7 @@ TEST(vector, createSmallVector)
 
 TEST(vector, createBiggestInitialSize)
 {
-  Vector_t *v = Vector_Create(UINT64_MAX, 100);
+  Vector_t *v = Vector_Create(SIZE_MAX, 100);
 
   ASSERT_EQ(v, nullptr);
 }
