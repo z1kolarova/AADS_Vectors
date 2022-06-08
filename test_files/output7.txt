@@ -17,6 +17,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Vector length: 20
 Press:
@@ -30,6 +31,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of an item:
 Press:
@@ -43,6 +45,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 0
 vector[1]: 5
@@ -76,6 +79,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of index to be found: 
 vector[9]: 45
@@ -90,6 +94,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of index to be found: 
 Item at position 500 was not found within the vector.
@@ -104,6 +109,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 End of file, finishing.
 Freeing all allocated memory.

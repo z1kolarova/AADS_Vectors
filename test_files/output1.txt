@@ -17,6 +17,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Vector length: 20
 Press:
@@ -30,6 +31,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of an item:
 Press:
@@ -43,6 +45,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 0
 vector[1]: 5
@@ -76,6 +79,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the position of an item to be removed:
 Press:
@@ -89,6 +93,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 0
 vector[1]: 5
@@ -121,6 +126,55 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
+anything else to finish.
+Enter index to set new data:
+Enter value to set:
+Press:
+1 to show the length of vector
+2 to add a new item
+3 to remove an item
+4 to print all items
+5 to find out whether an item is present
+6 to find an item's position
+7 to clear the vector
+8 to fill a portion of the vector with desired value
+9 to create a copy of a vector
+0 to print one item
+S to set value of item in vector
+anything else to finish.
+vector[0]: 0
+vector[1]: 123456
+vector[2]: 10
+vector[3]: 15
+vector[4]: 20
+vector[5]: 25
+vector[6]: 30
+vector[7]: 35
+vector[8]: 40
+vector[9]: 45
+vector[10]: 55
+vector[11]: 60
+vector[12]: 65
+vector[13]: 70
+vector[14]: 75
+vector[15]: 80
+vector[16]: 85
+vector[17]: 90
+vector[18]: 95
+vector[19]: 365
+Press:
+1 to show the length of vector
+2 to add a new item
+3 to remove an item
+4 to print all items
+5 to find out whether an item is present
+6 to find an item's position
+7 to clear the vector
+8 to fill a portion of the vector with desired value
+9 to create a copy of a vector
+0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of an item to be found:
 Vector does not contain this item.
@@ -135,6 +189,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of an item to be found:
 Choose the initial index for searching:
@@ -150,6 +205,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 myFree: releasing 200 bytes, memory allocated 32 bytes
 Press:
@@ -163,6 +219,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Vector length: 0
 Press:
@@ -176,6 +233,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value of an item:
 myRealloc: allocating 80 bytes, memory allocated 112 bytes
@@ -190,6 +248,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 8
 Press:
@@ -203,6 +262,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 myMalloc: allocating 32 bytes, memory allocated 144 bytes
 myMalloc: allocating 80 bytes, memory allocated 224 bytes
@@ -221,6 +281,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Freeing all allocated memory.
 myFree: releasing 80 bytes, memory allocated 32 bytes
