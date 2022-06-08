@@ -89,6 +89,7 @@ TEST_F(VectorFullTest, copyVector)
   ASSERT_EQ(v->alloc_step, c->alloc_step);
   ASSERT_EQ(v->size, c->size);
   ASSERT_NE(v->items, c->items);
+  ASSERT_NE(v->next, c->next);
   ASSERT_THAT(std::vector<Vector_DataType_t>(c->items, c->items + Vector_Length(c)),
               ::testing::ElementsAreArray(v->items, Vector_Length(v)));
 
@@ -97,24 +98,22 @@ TEST_F(VectorFullTest, copyVector)
 
 TEST(vector, copyVectorNull)
 {
-  Vector_t *c = Vector_Copy(NULL);
+  Vector_t *c = Vector_Copy(nullptr);
   ASSERT_EQ(c, nullptr);
 }
 
 TEST_F(VectorTest, clearVector)
 {
-  {
-    Vector_Clear(v);
-    ASSERT_EQ(v->alloc_step, 100);
-    ASSERT_EQ(v->size, 0);
-    ASSERT_EQ(v->next, nullptr);
-    ASSERT_EQ(v->items, nullptr);
-  }
+  Vector_Clear(v);
+  ASSERT_EQ(v->alloc_step, 100);
+  ASSERT_EQ(v->size, 0);
+  ASSERT_EQ(v->next, nullptr);
+  ASSERT_EQ(v->items, nullptr);
 }
 
 TEST(vector, clearVectorNull)
 {
-  Vector_Clear(NULL);
+  Vector_Clear(nullptr);
 }
 
 TEST_F(VectorTest, appendSingleItem)
@@ -139,7 +138,7 @@ TEST_F(VectorTest, appendMultipleItems)
 
 TEST(vector, appendVectorNull)
 {
-  Vector_Append(NULL, 10);
+  Vector_Append(nullptr, 10);
 }
 
 TEST_F(VectorTest, getElementAtValidPosition)
@@ -160,13 +159,13 @@ TEST_F(VectorTest, getElementOutOfBounds)
 
 TEST_F(VectorTest, getElementWithInvalidReturn)
 {
-  ASSERT_FALSE(Vector_At(v, 5, NULL));
+  ASSERT_FALSE(Vector_At(v, 5, nullptr));
 }
 
 TEST(vector, getElementAtPositionWithNullContainer)
 {
   Vector_DataType_t val;
-  Vector_At(NULL, 1, &val);
+  Vector_At(nullptr, 1, &val);
 }
 
 TEST_F(VectorTest, lengthOfEmptyVectorIsZero)
@@ -176,25 +175,28 @@ TEST_F(VectorTest, lengthOfEmptyVectorIsZero)
 
 TEST_F(VectorTest, insertThreeItemsAndCheckTheLengthIsThree)
 {
-  Vector_Append(v, 123);
-  Vector_Append(v, 123);
-  Vector_Append(v, 123);
+  ASSERT_EQ(Vector_Append(v, 123), 0);
+  ASSERT_EQ(Vector_Append(v, 123), 1);
+  ASSERT_EQ(Vector_Append(v, 123), 2);
   ASSERT_EQ(Vector_Length(v), 3);
 }
 
-TEST(vector, invalidVectorReturnsMinusOne)
+TEST(vector, invalidVectorReturnsSizeMax)
 {
-  ASSERT_EQ(Vector_Length(NULL), -1);
+  ASSERT_EQ(Vector_Length(nullptr), SIZE_MAX);
 }
 
 TEST_F(VectorFullTest, removeFirstItem)
 {
   Vector_DataType_t val;
 
+  Vector_DataType_t *oldNext = v->next;
+
   ASSERT_TRUE(Vector_Remove(v, 0));
   ASSERT_EQ(Vector_Length(v), 2);
   Vector_At(v, 0, &val);
   ASSERT_EQ(val, 321);
+  ASSERT_EQ(v->next, oldNext - 1);
 }
 
 TEST_F(VectorFullTest, removeOutOfBoundsItem)
@@ -204,7 +206,7 @@ TEST_F(VectorFullTest, removeOutOfBoundsItem)
 
 TEST(vector, removeItemWithNullContainer)
 {
-  ASSERT_FALSE(Vector_Remove(NULL, 0));
+  ASSERT_FALSE(Vector_Remove(nullptr, 0));
 }
 
 TEST_F(VectorFullTest, containsValidValue)
@@ -219,7 +221,7 @@ TEST_F(VectorFullTest, containsInvalidValue)
 
 TEST(vector, containsItemWithNullContainer)
 {
-  ASSERT_FALSE(Vector_Contains(NULL, 123));
+  ASSERT_FALSE(Vector_Contains(nullptr, 123));
 }
 
 TEST_F(VectorFullTest, indexOfValidItemWithZeroOffset)
@@ -244,7 +246,7 @@ TEST_F(VectorFullTest, indexOfValidItemWithOffsetBehindIt)
 
 TEST(vector, indexOfItemWithNullcontainer)
 {
-  ASSERT_EQ(Vector_IndexOf(NULL, 123, 0), -1);
+  ASSERT_EQ(Vector_IndexOf(nullptr, 123, 0), -1);
 }
 
 TEST_F(VectorTest, fillPartOfVectorFromBegin)
@@ -315,9 +317,35 @@ TEST_F(VectorTest, fillOnlyAllocatedSpace)
   ASSERT_EQ(Vector_Length(v), 10);
 }
 
-TEST(vector, fillvectorWithNullcontainer)
+TEST(vector, fillVectorWithNullcontainer)
 {
-  Vector_Fill(NULL, 123, 0, 10);
+  Vector_Fill(nullptr, 123, 0, 10);
+}
+
+TEST_F(VectorFullTest, vectorSetValidPosition)
+{
+  Vector_Set(v, 1, 0);
+  Vector_DataType_t val = 10;
+  Vector_At(v, 1, &val);
+
+  ASSERT_EQ(val, 0);
+}
+
+TEST_F(VectorTest, vectorSetInvalidPosition)
+{
+  size_t index = Vector_Append(v, 1);
+  auto afterInserted = v->items[index + 1];
+  Vector_Set(v, index + 1, !afterInserted);
+  Vector_DataType_t val = 10;
+  Vector_At(v, index, &val);
+
+  ASSERT_EQ(val, 1);
+  ASSERT_EQ(v->items[index + 1], afterInserted);
+}
+
+TEST(vector, vectorSetNullContainer)
+{
+  Vector_Set(nullptr, 0, 0);
 }
 
 /* Private function definitions ------------------------------------------------------------------*/

@@ -67,6 +67,13 @@ size_t Vector_Append(Vector_t *vector, Vector_DataType_t value)
   return SIZE_MAX;
 }
 
+void Vector_Set(Vector_t *const vector, size_t position, Vector_DataType_t value)
+{
+  UNUSED(vector);
+  UNUSED(position);
+  UNUSED(value);
+}
+
 bool Vector_Contains(const Vector_t *const vector, Vector_DataType_t value)
 {
   UNUSED(vector);

@@ -19,5 +19,6 @@ var group__vector =
     [ "Vector_Fill", "group__vector.html#ga928c23999b743fd4d042bdf5015c39c4", null ],
     [ "Vector_IndexOf", "group__vector.html#ga27e729f926d935568a662959c0ad41a3", null ],
     [ "Vector_Length", "group__vector.html#ga3f67f0c785ef96c8ca4fb0b6863e1d46", null ],
-    [ "Vector_Remove", "group__vector.html#gae4f1b89ad0666517d961feb09910f2ae", null ]
+    [ "Vector_Remove", "group__vector.html#gae4f1b89ad0666517d961feb09910f2ae", null ],
+    [ "Vector_Set", "group__vector.html#ga6e923b49ef8f6afc9d1a6b53a7d11ec7", null ]
 ];

@@ -134,6 +134,15 @@ bool Vector_Remove(Vector_t *const vector, size_t position);
  */
 size_t Vector_Append(Vector_t *const vector, Vector_DataType_t value);
 
+/*! Sets \a value in the \a vector at specified \a position. The \a value is applied only if \a
+ * position is smaller then current length of the \a vector, otherwise nothing is done.
+ *
+ * \param[in] vector    Pointer to a vector.
+ * \param[in] position  Position within the vector to be overriden.
+ * \param[in] value     Value to set.
+ */
+void Vector_Set(Vector_t *const vector, size_t position, Vector_DataType_t value);
+
 /*! Looks for the \a value in the \a vector.
  *
  * \param[in]   vector  Pointer to a vector.

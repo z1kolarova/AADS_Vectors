@@ -142,6 +142,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:ga8735fefb9a79fcc264e687cc82873fe4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga8735fefb9a79fcc264e687cc82873fe4">Vector_Append</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
 <tr class="memdesc:ga8735fefb9a79fcc264e687cc82873fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a new item to the end of a vector.  <a href="group__vector.html#ga8735fefb9a79fcc264e687cc82873fe4">More...</a><br /></td></tr>
 <tr class="separator:ga8735fefb9a79fcc264e687cc82873fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e923b49ef8f6afc9d1a6b53a7d11ec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga6e923b49ef8f6afc9d1a6b53a7d11ec7">Vector_Set</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, size_t position, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
+<tr class="memdesc:ga6e923b49ef8f6afc9d1a6b53a7d11ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <em>value</em> in the <em>vector</em> at specified <em>position</em>.  <a href="group__vector.html#ga6e923b49ef8f6afc9d1a6b53a7d11ec7">More...</a><br /></td></tr>
+<tr class="separator:ga6e923b49ef8f6afc9d1a6b53a7d11ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga0a43ad373a7b9b0e16e0045a7bfc3cd7">Vector_Contains</a> (const <a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
 <tr class="memdesc:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for the <em>value</em> in the <em>vector</em>.  <a href="group__vector.html#ga0a43ad373a7b9b0e16e0045a7bfc3cd7">More...</a><br /></td></tr>
 <tr class="separator:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -560,6 +563,51 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current length of a vector or SIZE_MAX if vector is NULL. </dd></dl>
+
+</div>
+</div>
+<a id="ga6e923b49ef8f6afc9d1a6b53a7d11ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e923b49ef8f6afc9d1a6b53a7d11ec7">&#9670;&nbsp;</a></span>Vector_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vector_Set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_vector__t.html">Vector_t</a> *const&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets <em>value</em> in the <em>vector</em> at specified <em>position</em>. </p>
+<p>The <em>value</em> is applied only if <em>position</em> is smaller then current length of the <em>vector</em>, otherwise nothing is done.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vector</td><td>Pointer to a vector. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Position within the vector to be overriden. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
