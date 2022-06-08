@@ -1,9 +1,18 @@
-set(SOURCES vector.c ioutils.c mymalloc.c)
+set(SOURCES vector.c)
 
-set(HEADER_LIST "${CMAKE_SOURCE_DIR}/include/vector.h" "${CMAKE_SOURCE_DIR}/include/ioutils.h" "${CMAKE_SOURCE_DIR}/include/mymalloc.h")
+set(HEADERS "include/vector.h")
 
 set(LIBNAME "vector")
 
-add_library(${LIBNAME} ${SOURCES} ${HEADER_LIST})
+include(FetchContent)
+FetchContent_Declare(
+  myMalloc
+  GIT_REPOSITORY https://mymalloc:8zj7GZZNmWyLGgQSyzsN@git.vyuka.fai.utb.cz/ads/common/mymalloc.git
+)
 
-target_include_directories(${LIBNAME} PUBLIC ../include)
+FetchContent_MakeAvailable(myMalloc)
+
+add_library(${LIBNAME} ${SOURCES} ${HEADERS})
+target_link_libraries(${LIBNAME} PUBLIC myMalloc)
+
+target_include_directories(${LIBNAME} PUBLIC include)
