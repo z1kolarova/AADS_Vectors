@@ -60,9 +60,17 @@ bool Vector_Remove(Vector_t *const vector, size_t position)
   return false;
 }
 
-void Vector_Append(Vector_t *vector, Vector_DataType_t value)
+size_t Vector_Append(Vector_t *vector, Vector_DataType_t value)
 {
   UNUSED(vector);
+  UNUSED(value);
+  return SIZE_MAX;
+}
+
+void Vector_Set(Vector_t *const vector, size_t position, Vector_DataType_t value)
+{
+  UNUSED(vector);
+  UNUSED(position);
   UNUSED(value);
 }
 

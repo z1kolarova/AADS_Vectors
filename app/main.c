@@ -14,6 +14,7 @@
 #include "vector.h"
 
 /* Includes --------------------------------------------------------------------------------------*/
+#include <ctype.h>
 #include <inttypes.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -83,12 +84,15 @@ int main(void)
            "8 to fill a portion of the vector with desired value\n"
            "9 to create a copy of a vector\n"
            "0 to print one item\n"
+           "S to set value of item in vector\n"
            "anything else to finish.\n");
     char c;
 
     if (io_utils_get_char(&c) == false) {
       break;
     }
+
+    c = toupper(c);
 
     switch (c) {
       case '1':
@@ -197,6 +201,18 @@ int main(void)
         } else {
           printf("Item at position %zu was not found within the vector.\n", i);
         }
+      } break;
+
+      case 'S': {
+        puts("Enter index to set new data:");
+        size_t index;
+        GET_VALUE_AND_TEST("%zu", index);
+
+        puts("Enter value to set:");
+        Vector_DataType_t data;
+        GET_VECTOR_VALUE_AND_TEST(data);
+
+        Vector_Set(vector, index, data);
       } break;
 
       default:

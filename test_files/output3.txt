@@ -16,6 +16,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value to be inserted:
 Choose the starting position:
@@ -31,6 +32,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 0
 vector[1]: 5
@@ -63,6 +65,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value to be inserted:
 Choose the starting position:
@@ -78,6 +81,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 3
 vector[1]: 3
@@ -110,6 +114,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value to be inserted:
 Choose the starting position:
@@ -125,6 +130,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 3
 vector[1]: 3
@@ -157,6 +163,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Choose the value to be inserted:
 Choose the starting position:
@@ -172,6 +179,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 vector[0]: 3
 vector[1]: 3
@@ -204,6 +212,7 @@ Press:
 8 to fill a portion of the vector with desired value
 9 to create a copy of a vector
 0 to print one item
+S to set value of item in vector
 anything else to finish.
 Freeing all allocated memory.
 myFree: releasing 880 bytes, memory allocated 32 bytes

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vector: include/ioutils.h Source File</title>
+<title>Vector: src/include/ioutils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,26 +98,20 @@ $(document).ready(function(){initNavTree('ioutils_8h_source.html',''); initResiz
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* Exported macros -------------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/* Exported variables ----------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* Exported functions declarations ---------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__io__utils.html#gad1e00c823e9822e1128f1e7ded1fdcc2">io_utils_get_string</a>(<span class="keywordtype">char</span> *c, <span class="keywordtype">int</span> maxLen);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__io__utils.html#ga2ab721a0c8fdf599944060a92c648629">io_utils_get_char</a>(<span class="keywordtype">char</span> *c);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__io__utils.html#ga4c2929c0a745b4ceea0c27edf0e72f6f">io_utils_get_long</a>(<span class="keywordtype">long</span> *val);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__io__utils.html#ga709212cd8a39e07867d2157825ab1594">io_utils_get_double</a>(<span class="keywordtype">double</span> *val);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__io__utils.html#ga17880506809dfb041b3a6b2e2740f4fc">io_utils_clear_stdin</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__io__utils.html#ga2f81ac89c43164775703780c13d79352">io_utils_get</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">bool</span> io_utils_get_string(<span class="keywordtype">char</span> *c, <span class="keywordtype">int</span> maxLen);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> io_utils_get_char(<span class="keywordtype">char</span> *c);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">bool</span> io_utils_get_long(<span class="keywordtype">long</span> *val);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> io_utils_get_double(<span class="keywordtype">double</span> *val);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> io_utils_clear_stdin(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">bool</span> io_utils_get(<span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif  //_IOUTILS_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__io__utils_html_ga2ab721a0c8fdf599944060a92c648629"><div class="ttname"><a href="group__io__utils.html#ga2ab721a0c8fdf599944060a92c648629">io_utils_get_char</a></div><div class="ttdeci">bool io_utils_get_char(char *c)</div><div class="ttdoc">Loads one character from standard input.</div><div class="ttdef"><b>Definition:</b> ioutils.c:58</div></div>
-<div class="ttc" id="agroup__io__utils_html_ga4c2929c0a745b4ceea0c27edf0e72f6f"><div class="ttname"><a href="group__io__utils.html#ga4c2929c0a745b4ceea0c27edf0e72f6f">io_utils_get_long</a></div><div class="ttdeci">bool io_utils_get_long(long *val)</div><div class="ttdoc">Loads a long type value from standard input.</div><div class="ttdef"><b>Definition:</b> ioutils.c:70</div></div>
-<div class="ttc" id="agroup__io__utils_html_ga709212cd8a39e07867d2157825ab1594"><div class="ttname"><a href="group__io__utils.html#ga709212cd8a39e07867d2157825ab1594">io_utils_get_double</a></div><div class="ttdeci">bool io_utils_get_double(double *val)</div><div class="ttdoc">Loads double type variable from standard input.</div><div class="ttdef"><b>Definition:</b> ioutils.c:84</div></div>
-<div class="ttc" id="agroup__io__utils_html_ga2f81ac89c43164775703780c13d79352"><div class="ttname"><a href="group__io__utils.html#ga2f81ac89c43164775703780c13d79352">io_utils_get</a></div><div class="ttdeci">bool io_utils_get(const char *format,...)</div><div class="ttdoc">Universal call for reading the user input.</div><div class="ttdef"><b>Definition:</b> ioutils.c:97</div></div>
-<div class="ttc" id="agroup__io__utils_html_ga17880506809dfb041b3a6b2e2740f4fc"><div class="ttname"><a href="group__io__utils.html#ga17880506809dfb041b3a6b2e2740f4fc">io_utils_clear_stdin</a></div><div class="ttdeci">void io_utils_clear_stdin(void)</div><div class="ttdoc">Clears one line of input.</div><div class="ttdef"><b>Definition:</b> ioutils.c:128</div></div>
-<div class="ttc" id="agroup__io__utils_html_gad1e00c823e9822e1128f1e7ded1fdcc2"><div class="ttname"><a href="group__io__utils.html#gad1e00c823e9822e1128f1e7ded1fdcc2">io_utils_get_string</a></div><div class="ttdeci">bool io_utils_get_string(char *c, int maxLen)</div><div class="ttdoc">Read one line from stdin.</div><div class="ttdef"><b>Definition:</b> ioutils.c:42</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ioutils_8h.html">ioutils.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="ioutils_8h.html">ioutils.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
