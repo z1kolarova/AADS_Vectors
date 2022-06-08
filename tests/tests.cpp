@@ -141,20 +141,18 @@ TEST(vector, appendVectorNull)
   Vector_Append(nullptr, 10);
 }
 
-TEST_F(VectorTest, getElementAtValidPosition)
+TEST_F(VectorFullTest, getElementAtValidPosition)
 {
   Vector_DataType_t val;
-  for (Vector_DataType_t i = 0; i < 20; ++i) {
-    Vector_Append(v, i);
-    ASSERT_TRUE(Vector_At(v, i, &val));
-    ASSERT_EQ(val, i);
-  }
+  ASSERT_TRUE(Vector_At(v, 1, &val));
+  ASSERT_EQ(val, 321);
 }
 
 TEST_F(VectorTest, getElementOutOfBounds)
 {
-  Vector_DataType_t val;
-  ASSERT_FALSE(Vector_At(v, 150, &val));
+  Vector_DataType_t val = 1;
+  ASSERT_FALSE(Vector_At(v, 5, &val));
+  ASSERT_EQ(val, 1);
 }
 
 TEST_F(VectorTest, getElementWithInvalidReturn)
