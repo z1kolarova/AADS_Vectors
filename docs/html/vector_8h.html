@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vector: include/vector.h File Reference</title>
+<title>Vector: src/include/vector.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('vector_8h.html',''); initResizable(); 
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vector.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="vector_8h__incl.png" border="0" usemap="#include_2vector_8h" alt=""/></div>
-<map name="include_2vector_8h" id="include_2vector_8h">
-<area shape="rect" title="Headers of Vector data structure." alt="" coords="137,5,251,32"/>
+<div class="center"><img src="vector_8h__incl.png" border="0" usemap="#src_2include_2vector_8h" alt=""/></div>
+<map name="src_2include_2vector_8h" id="src_2include_2vector_8h">
+<area shape="rect" title="Headers of Vector data structure." alt="" coords="127,5,261,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,84,107"/>
 <area shape="rect" title=" " alt="" coords="109,80,183,107"/>
 <area shape="rect" title=" " alt="" coords="208,80,276,107"/>
@@ -114,9 +114,9 @@ Include dependency graph for vector.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="vector_8h__dep__incl.png" border="0" usemap="#include_2vector_8hdep" alt=""/></div>
-<map name="include_2vector_8hdep" id="include_2vector_8hdep">
-<area shape="rect" title="Headers of Vector data structure." alt="" coords="50,5,163,32"/>
+<div class="center"><img src="vector_8h__dep__incl.png" border="0" usemap="#src_2include_2vector_8hdep" alt=""/></div>
+<map name="src_2include_2vector_8hdep" id="src_2include_2vector_8hdep">
+<area shape="rect" title="Headers of Vector data structure." alt="" coords="39,5,174,32"/>
 <area shape="rect" href="vector_8c.html" title="Implementation of function.h header file." alt="" coords="5,80,96,107"/>
 <area shape="rect" href="main_8c.html" title="Unit tests for vector module." alt="" coords="121,80,207,107"/>
 </map>
@@ -133,7 +133,7 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gac3ddd4fa056d4a50605989781b6d9bf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gac3ddd4fa056d4a50605989781b6d9bf3">VECTOR_DATATYPE_READ</a>&#160;&#160;&#160;SCNu64</td></tr>
-<tr class="memdesc:gac3ddd4fa056d4a50605989781b6d9bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol that can be used when readind data from user that can be stored in vector.  <a href="group__vector.html#gac3ddd4fa056d4a50605989781b6d9bf3">More...</a><br /></td></tr>
+<tr class="memdesc:gac3ddd4fa056d4a50605989781b6d9bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol that can be used when reading data from user that can be stored in vector.  <a href="group__vector.html#gac3ddd4fa056d4a50605989781b6d9bf3">More...</a><br /></td></tr>
 <tr class="separator:gac3ddd4fa056d4a50605989781b6d9bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac586f25a122e4401c2df9af388328dce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gac586f25a122e4401c2df9af388328dce">VECTOR_DATATYPE_PRINT</a>&#160;&#160;&#160;PRIu64</td></tr>
 <tr class="memdesc:gac586f25a122e4401c2df9af388328dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol that can be used for printing of values stored in the vector.  <a href="group__vector.html#gac586f25a122e4401c2df9af388328dce">More...</a><br /></td></tr>
@@ -152,23 +152,24 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0f216fd2ab5a207bb45654df1c218dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a vector with <em>initial_size</em> and a <em>alloc_step</em>.  <a href="group__vector.html#ga0f216fd2ab5a207bb45654df1c218dc5">More...</a><br /></td></tr>
 <tr class="separator:ga0f216fd2ab5a207bb45654df1c218dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga687505434fdeb9128d23b62f1fd03aaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_vector__t.html">Vector_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga687505434fdeb9128d23b62f1fd03aaf">Vector_Copy</a> (const <a class="el" href="struct_vector__t.html">Vector_t</a> *const original)</td></tr>
-<tr class="memdesc:ga687505434fdeb9128d23b62f1fd03aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a separate copy of a vector that contains the same data.  <a href="group__vector.html#ga687505434fdeb9128d23b62f1fd03aaf">More...</a><br /></td></tr>
+<tr class="memdesc:ga687505434fdeb9128d23b62f1fd03aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a separate (independent) copy of a vector that contains the same data.  <a href="group__vector.html#ga687505434fdeb9128d23b62f1fd03aaf">More...</a><br /></td></tr>
 <tr class="separator:ga687505434fdeb9128d23b62f1fd03aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga461a51611041e228812048a13d5d0ddf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga461a51611041e228812048a13d5d0ddf">Vector_Clear</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector)</td></tr>
-<tr class="memdesc:ga461a51611041e228812048a13d5d0ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the content of a vector, allocated memory is freed, the size of a vector and the count of empty cells are set to 0.  <a href="group__vector.html#ga461a51611041e228812048a13d5d0ddf">More...</a><br /></td></tr>
+<tr class="memdesc:ga461a51611041e228812048a13d5d0ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the content of a vector, allocated memory for <a class="el" href="struct_vector__t.html#a2078e01a391353ea4a6276983e2fbffb">Vector_t::items</a> is freed, the <a class="el" href="struct_vector__t.html#a854352f53b148adc24983a58a1866d66">Vector_t::size</a> of a vector is set to 0, <a class="el" href="struct_vector__t.html#a2078e01a391353ea4a6276983e2fbffb">Vector_t::items</a> and <a class="el" href="struct_vector__t.html#a37778f406f88661a31c066daac7cd446">Vector_t::next</a> pointers are set to NULL.  <a href="group__vector.html#ga461a51611041e228812048a13d5d0ddf">More...</a><br /></td></tr>
 <tr class="separator:ga461a51611041e228812048a13d5d0ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3f67f0c785ef96c8ca4fb0b6863e1d46"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga3f67f0c785ef96c8ca4fb0b6863e1d46">Vector_Length</a> (const <a class="el" href="struct_vector__t.html">Vector_t</a> *const vector)</td></tr>
 <tr class="memdesc:ga3f67f0c785ef96c8ca4fb0b6863e1d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current length of a vector.  <a href="group__vector.html#ga3f67f0c785ef96c8ca4fb0b6863e1d46">More...</a><br /></td></tr>
 <tr class="separator:ga3f67f0c785ef96c8ca4fb0b6863e1d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga636d77baf84ba9f0ab9c7cb24a546ee1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga636d77baf84ba9f0ab9c7cb24a546ee1">Vector_At</a> (const <a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, size_t position, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> *const value)</td></tr>
-<tr class="memdesc:ga636d77baf84ba9f0ab9c7cb24a546ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of stored item at selected position in the vector.  <a href="group__vector.html#ga636d77baf84ba9f0ab9c7cb24a546ee1">More...</a><br /></td></tr>
+<tr class="memdesc:ga636d77baf84ba9f0ab9c7cb24a546ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of stored item at selected <em>position</em> in the <em>vector</em>.  <a href="group__vector.html#ga636d77baf84ba9f0ab9c7cb24a546ee1">More...</a><br /></td></tr>
 <tr class="separator:ga636d77baf84ba9f0ab9c7cb24a546ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4f1b89ad0666517d961feb09910f2ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae4f1b89ad0666517d961feb09910f2ae">Vector_Remove</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, size_t position)</td></tr>
-<tr class="memdesc:gae4f1b89ad0666517d961feb09910f2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item at selected position and shifts data by one item to the left.  <a href="group__vector.html#gae4f1b89ad0666517d961feb09910f2ae">More...</a><br /></td></tr>
+<tr class="memitem:gae4f1b89ad0666517d961feb09910f2ae"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#gae4f1b89ad0666517d961feb09910f2ae">Vector_Remove</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, size_t position)</td></tr>
+<tr class="memdesc:gae4f1b89ad0666517d961feb09910f2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item at desired <em>position</em> and shifts data by one item to the left from that position. <br /></td></tr>
 <tr class="separator:gae4f1b89ad0666517d961feb09910f2ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00c3265056fba8afb75fa5746ac9808c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga00c3265056fba8afb75fa5746ac9808c">Vector_Append</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
-<tr class="memdesc:ga00c3265056fba8afb75fa5746ac9808c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a new item to the end of a vector.  <a href="group__vector.html#ga00c3265056fba8afb75fa5746ac9808c">More...</a><br /></td></tr>
-<tr class="separator:ga00c3265056fba8afb75fa5746ac9808c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8735fefb9a79fcc264e687cc82873fe4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga8735fefb9a79fcc264e687cc82873fe4">Vector_Append</a> (<a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
+<tr class="memdesc:ga8735fefb9a79fcc264e687cc82873fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a new item to the end of a vector.  <a href="group__vector.html#ga8735fefb9a79fcc264e687cc82873fe4">More...</a><br /></td></tr>
+<tr class="separator:ga8735fefb9a79fcc264e687cc82873fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vector.html#ga0a43ad373a7b9b0e16e0045a7bfc3cd7">Vector_Contains</a> (const <a class="el" href="struct_vector__t.html">Vector_t</a> *const vector, <a class="el" href="group__vector.html#gaa721ee7a4c78a42133d8b7881fea3e76">Vector_DataType_t</a> value)</td></tr>
 <tr class="memdesc:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks for the <em>value</em> in the <em>vector</em>.  <a href="group__vector.html#ga0a43ad373a7b9b0e16e0045a7bfc3cd7">More...</a><br /></td></tr>
 <tr class="separator:ga0a43ad373a7b9b0e16e0045a7bfc3cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +195,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="vector_8h.html">vector.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="vector_8h.html">vector.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

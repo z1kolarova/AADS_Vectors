@@ -1,12 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "aimnstv",
-  1: "tv",
+  0: "aimnsv",
+  1: "v",
   2: "imv",
-  3: "imv",
+  3: "v",
   4: "ains",
   5: "v",
-  6: "imv",
+  6: "v",
   7: "a"
 };
 

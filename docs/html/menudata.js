@@ -32,13 +32,7 @@ var menudata={children:[
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"Globals",url:"globals.html",children:[
-{text:"All",url:"globals.html",children:[
-{text:"i",url:"globals.html#index_i"},
-{text:"m",url:"globals.html#index_m"},
-{text:"v",url:"globals.html#index_v"}]},
-{text:"Functions",url:"globals_func.html",children:[
-{text:"i",url:"globals_func.html#index_i"},
-{text:"m",url:"globals_func.html#index_m"},
-{text:"v",url:"globals_func.html#index_v"}]},
+{text:"All",url:"globals.html"},
+{text:"Functions",url:"globals_func.html"},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

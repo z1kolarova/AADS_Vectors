@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adt_20vektor_76',['ADT Vektor',['../index.html',1,'']]]
+  ['adt_20vektor_49',['ADT Vektor',['../index.html',1,'']]]
 ];

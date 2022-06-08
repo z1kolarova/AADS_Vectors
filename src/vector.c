@@ -60,10 +60,11 @@ bool Vector_Remove(Vector_t *const vector, size_t position)
   return false;
 }
 
-void Vector_Append(Vector_t *vector, Vector_DataType_t value)
+size_t Vector_Append(Vector_t *vector, Vector_DataType_t value)
 {
   UNUSED(vector);
   UNUSED(value);
+  return SIZE_MAX;
 }
 
 bool Vector_Contains(const Vector_t *const vector, Vector_DataType_t value)

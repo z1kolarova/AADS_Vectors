@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vector: include/mymalloc.h File Reference</title>
+<title>Vector: src/include/mymalloc.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,19 +96,10 @@ $(document).ready(function(){initNavTree('mymalloc_8h.html',''); initResizable()
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mymalloc.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="mymalloc_8h__incl.png" border="0" usemap="#include_2mymalloc_8h" alt=""/></div>
-<map name="include_2mymalloc_8h" id="include_2mymalloc_8h">
-<area shape="rect" title="MyMalloc module header file (allocation debugging function memory)" alt="" coords="5,5,140,32"/>
-<area shape="rect" title=" " alt="" coords="39,80,107,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="mymalloc_8h__dep__incl.png" border="0" usemap="#include_2mymalloc_8hdep" alt=""/></div>
-<map name="include_2mymalloc_8hdep" id="include_2mymalloc_8hdep">
-<area shape="rect" title="MyMalloc module header file (allocation debugging function memory)" alt="" coords="5,5,140,32"/>
-<area shape="rect" href="mymalloc_8c.html" title="Module that allocates and track the memory." alt="" coords="17,80,128,107"/>
+<div class="center"><img src="mymalloc_8h__incl.png" border="0" usemap="#src_2include_2mymalloc_8h" alt=""/></div>
+<map name="src_2include_2mymalloc_8h" id="src_2include_2mymalloc_8h">
+<area shape="rect" title="MyMalloc module header file (allocation debugging function memory)" alt="" coords="5,5,161,32"/>
+<area shape="rect" title=" " alt="" coords="49,80,117,107"/>
 </map>
 </div>
 </div>
@@ -116,15 +107,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga1cf0dcab156e591766b4a79a714e312b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mymalloc.html#ga1cf0dcab156e591766b4a79a714e312b">myMalloc</a> (size_t size)</td></tr>
-<tr class="memdesc:ga1cf0dcab156e591766b4a79a714e312b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates the dynamic memory.  <a href="group__mymalloc.html#ga1cf0dcab156e591766b4a79a714e312b">More...</a><br /></td></tr>
-<tr class="separator:ga1cf0dcab156e591766b4a79a714e312b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaab98f115e7a6be00f350843da779e4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mymalloc.html#gaab98f115e7a6be00f350843da779e4b1">myFree</a> (void *memblock)</td></tr>
-<tr class="memdesc:gaab98f115e7a6be00f350843da779e4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the allocated memory.  <a href="group__mymalloc.html#gaab98f115e7a6be00f350843da779e4b1">More...</a><br /></td></tr>
-<tr class="separator:gaab98f115e7a6be00f350843da779e4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3756125135ae7de6323b62c5e6156eef"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mymalloc.html#ga3756125135ae7de6323b62c5e6156eef">myRealloc</a> (void *ptr, size_t newSize)</td></tr>
-<tr class="memdesc:ga3756125135ae7de6323b62c5e6156eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocate the memory.  <a href="group__mymalloc.html#ga3756125135ae7de6323b62c5e6156eef">More...</a><br /></td></tr>
-<tr class="separator:ga3756125135ae7de6323b62c5e6156eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf0dcab156e591766b4a79a714e312b"><td class="memItemLeft" align="right" valign="top"><a id="a1cf0dcab156e591766b4a79a714e312b"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>myMalloc</b> (size_t size)</td></tr>
+<tr class="separator:a1cf0dcab156e591766b4a79a714e312b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab98f115e7a6be00f350843da779e4b1"><td class="memItemLeft" align="right" valign="top"><a id="aab98f115e7a6be00f350843da779e4b1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>myFree</b> (void *memblock)</td></tr>
+<tr class="separator:aab98f115e7a6be00f350843da779e4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3756125135ae7de6323b62c5e6156eef"><td class="memItemLeft" align="right" valign="top"><a id="a3756125135ae7de6323b62c5e6156eef"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>myRealloc</b> (void *ptr, size_t newSize)</td></tr>
+<tr class="separator:a3756125135ae7de6323b62c5e6156eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MyMalloc module header file (allocation debugging function memory) </p>
@@ -137,7 +128,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="mymalloc_8h.html">mymalloc.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="mymalloc_8h.html">mymalloc.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
