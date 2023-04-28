@@ -12,6 +12,7 @@
  */
 /* Includes --------------------------------------------------------------------------------------*/
 #include "vector.h"
+#include <mymalloc.h>
 #include <stdlib.h>
 
 /* Private types ---------------------------------------------------------------------------------*/
@@ -23,11 +24,11 @@
 /* Exported functions definitions ----------------------------------------------------------------*/
 Vector_t *Vector_Create(size_t initial_size, size_t alloc_step)
 {
-  Vector_t * v = malloc(sizeof(Vector_t));
-  v->items = malloc(initial_size * sizeof(Vector_DataType_t));
+  Vector_t * v = myMalloc(sizeof(Vector_t));
+  v->items = myMalloc(initial_size * sizeof(Vector_DataType_t));
   if(v->items == NULL)
   {
-      free(v);
+      myFree(v);
       return NULL;
   }
   v->size = initial_size;
@@ -40,16 +41,16 @@ Vector_t *Vector_Copy(const Vector_t *const original)
 {
     if(original)
     {
-        Vector_t* v = malloc(sizeof(Vector_t));
+        Vector_t* v = myMalloc(sizeof(Vector_t));
         if(v == NULL)
         {
             return NULL;
         }
         v->size = original->size;
-        v->items = malloc(original->size * sizeof(Vector_DataType_t));
+        v->items = myMalloc(original->size * sizeof(Vector_DataType_t));
         if(v->items == NULL)
         {
-            free(v);
+            myFree(v);
             return NULL;
         }
         v->alloc_step = original->alloc_step;
@@ -72,7 +73,7 @@ void Vector_Clear(Vector_t *const vector)
 {
     if(vector)
     {
-        free(vector->items);
+        myFree(vector->items);
         vector->items = NULL;
         vector->next = NULL;
         vector->size = 0;
@@ -216,9 +217,9 @@ void Vector_Destroy(Vector_t **const vector)
 {
     if(vector && *vector)
     {
-        free((*vector)->items);
+        myFree((*vector)->items);
         (*vector)->items = NULL;
-        free(*vector);
+        myFree(*vector);
         *vector = NULL;
     }
     return;
