@@ -130,7 +130,7 @@ size_t Vector_Append(Vector_t *vector, Vector_DataType_t value)
         if(vector->next >= vector->items + vector->size)
         {
             size_t itemCount = Vector_Length(vector);
-            Vector_DataType_t *temp = realloc(vector->items,
+            Vector_DataType_t *temp = myRealloc(vector->items,
                                               sizeof(Vector_DataType_t)*(vector->size + vector->alloc_step));
             if(temp == NULL)
             {
