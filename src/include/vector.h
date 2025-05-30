@@ -189,4 +189,10 @@ void Vector_Fill(const Vector_t *const vector,
 void Vector_Destroy(Vector_t **const vector);
 
 /*! \} */
+
+/*! Merges two provided SORTED vectors into the \a result vector so that
+ *  it is still sorted.
+ */
+void Merge(Vector_t * result, Vector_t * v1, Vector_t * v2);
+
 #endif  //__VECTOR_H

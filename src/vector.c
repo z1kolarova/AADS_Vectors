@@ -14,6 +14,7 @@
 #include "vector.h"
 #include <mymalloc.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /* Private types ---------------------------------------------------------------------------------*/
 /* Private macros --------------------------------------------------------------------------------*/
@@ -93,7 +94,7 @@ bool Vector_At(const Vector_t *const vector, size_t position, Vector_DataType_t 
 {
     if(vector)
     {
-        if((vector->items + position) <= vector->next)
+        if((vector->items + position) < vector->next)
         {
             *value = *(vector->items + position);
             return true;
@@ -223,6 +224,38 @@ void Vector_Destroy(Vector_t **const vector)
         *vector = NULL;
     }
     return;
+}
+
+void Merge(Vector_t * result, Vector_t * v1, Vector_t * v2)
+{
+    if (result && v1 && v2)
+    {
+        size_t i1 = 0, i2 = 0; // indexes
+        Vector_DataType_t e1, e2; //current elements of respective vectors
+        while(Vector_At(v1, i1, &e1) && Vector_At(v2, i2, &e2))
+        {
+            if(e1 <= e2)
+            {
+                Vector_Append(result, e1);
+                i1++;
+            }
+            else
+            {
+                Vector_Append(result, e2);
+                i2++;
+            }
+        }
+        while(Vector_At(v1, i1, &e1))
+        {
+            Vector_Append(result, e1);
+            i1++;
+        }
+        while(Vector_At(v2, i2, &e2))
+        {
+            Vector_Append(result, e2);
+            i2++;
+        }
+    }
 }
 
 /* Private function definitions ------------------------------------------------------------------*/

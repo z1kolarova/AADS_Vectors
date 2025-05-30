@@ -38,7 +38,9 @@
 int main(void)
 {
   bool run = true;
+
   Vector_DataType_t n;
+
   printf("Vector test program\n"
          "Type the default size of array and the size of incrementation.\n"
          "Size:\n");
@@ -68,7 +70,6 @@ int main(void)
   for (Vector_DataType_t val = 0; val < 100; val += 5) {
     Vector_Append(vector, val);
   }
-
   setvbuf(stdout, NULL, _IONBF, 0);
   setvbuf(stderr, NULL, _IONBF, 0);
 
@@ -85,6 +86,7 @@ int main(void)
            "9 to create a copy of a vector\n"
            "0 to print one item\n"
            "S to set value of item in vector\n"
+           "T to test exam method Merge\n"
            "anything else to finish.\n");
     char c;
 
@@ -213,6 +215,95 @@ int main(void)
         GET_VECTOR_VALUE_AND_TEST(data);
 
         Vector_Set(vector, index, data);
+      } break;
+
+      case 'T': {
+        puts("Enter the initial size of vector1:");
+        size_t size1;
+        GET_VALUE_AND_TEST("%zu", size1);
+
+        puts("Enter the desired increment of vector1:");
+        size_t incr1;
+        GET_VALUE_AND_TEST("%zu", incr1);
+
+        puts("Enter the value whose multiples will fill vector1:");
+        Vector_DataType_t multi1;
+        GET_VECTOR_VALUE_AND_TEST(multi1);
+
+        Vector_t *vector1;
+        vector1 = Vector_Create(size1, incr1);
+        for (Vector_DataType_t val = 0; val < 100; val += multi1)
+        {
+          Vector_Append(vector1, val);
+        }
+
+        puts("Enter the initial size of vector2:");
+        size_t size2;
+        GET_VALUE_AND_TEST("%zu", size2);
+
+        puts("Enter the desired increment of vector2:");
+        size_t incr2;
+        GET_VALUE_AND_TEST("%zu", incr2);
+
+        puts("Enter the value whose multiples will fill vector2:");
+        Vector_DataType_t multi2;
+        GET_VECTOR_VALUE_AND_TEST(multi2);
+
+        Vector_t *vector2;
+        vector2 = Vector_Create(size2, incr2);
+        for (Vector_DataType_t val = 0; val < 100; val += multi2)
+        {
+          Vector_Append(vector2, val);
+        }
+
+        Vector_t * vector3;
+        vector3 = Vector_Create(size1 + size2, incr1);
+
+        printf("Contents of vector1:");
+        if (Vector_Length(vector1) != SIZE_MAX) {
+          for (size_t i = 0; i < Vector_Length(vector1); i++) {
+            Vector_DataType_t elm;
+
+            if (Vector_At(vector1, i, &elm)) {
+              printf("vector[%zu]: %" VECTOR_DATATYPE_PRINT "\n", i, elm);
+            } else {
+              printf("Item at position %zu was not found within the vector.\n", i);
+            }
+          }
+        }
+
+        printf("Contents of vector2:");
+        if (Vector_Length(vector2) != SIZE_MAX) {
+          for (size_t i = 0; i < Vector_Length(vector2); i++) {
+            Vector_DataType_t elm;
+
+            if (Vector_At(vector2, i, &elm)) {
+              printf("vector[%zu]: %" VECTOR_DATATYPE_PRINT "\n", i, elm);
+            } else {
+              printf("Item at position %zu was not found within the vector.\n", i);
+            }
+          }
+        }
+
+        printf("Starting the merge of vector1 and vector2.");
+        Merge(vector3, vector1, vector2);
+
+        if (Vector_Length(vector3) != SIZE_MAX) {
+          for (size_t i = 0; i < Vector_Length(vector3); i++) {
+            Vector_DataType_t elm;
+
+            if (Vector_At(vector3, i, &elm)) {
+              printf("vector[%zu]: %" VECTOR_DATATYPE_PRINT "\n", i, elm);
+            } else {
+              printf("Item at position %zu was not found within the vector.\n", i);
+            }
+          }
+        }
+
+        Vector_Destroy(&vector1);
+        Vector_Destroy(&vector2);
+        Vector_Destroy(&vector3);
+
       } break;
 
       default:
